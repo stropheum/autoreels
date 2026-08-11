@@ -1,5 +1,5 @@
-# autoreels
-A tampermonkey script for auto scrolling reels
+# Autoreels
+Want to watch Instagram reels but your hands are busy for **some reason**? Now all your problems are solved. This script detects the length of reels as well as current play progress and automatically scrolls to the next video on completion, rather than looping.
 
 ## Install Instructions
 1. Install [Tampermonkey](https://www.tampermonkey.net/) for your web browser
