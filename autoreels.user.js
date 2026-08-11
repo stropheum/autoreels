@@ -23,7 +23,7 @@
     let loggingEnabled = GM_getValue("enabled", false);
 
     GM_registerMenuCommand(
-        `${enabled ? "✅" : "❌"} Enabled`,
+        `${loggingEnabled ? "✅" : "❌"} loggingEnabled`,
         () => {
             GM_setValue("enabled", !enabled);
             alert("Reload the page to see the updated menu.");
