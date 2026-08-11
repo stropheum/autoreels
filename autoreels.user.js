@@ -20,13 +20,13 @@
 
     let currentVideo = null;
     let hasAdvanced = false;
-    let loggingEnabled = GM_getValue("enabled", false);
+    let loggingEnabled = GM_getValue("loggingEnabled", false);
 
     GM_registerMenuCommand(
-        `${loggingEnabled ? "✅" : "❌"} loggingEnabled`,
+        `${loggingEnabled ? "✅" : "❌"} Logging`,
         () => {
-            GM_setValue("enabled", !enabled);
-            alert("Reload the page to see the updated menu.");
+            GM_setValue("loggingEnabled", !loggingEnabled);
+            location.reload();
         }
     );
 
