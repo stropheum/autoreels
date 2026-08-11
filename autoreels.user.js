@@ -9,6 +9,9 @@
 // @match        https://www.instagram.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_registerMenuCommand
 // @connect      localhost
 // ==/UserScript==
 
@@ -19,6 +22,13 @@
     let hasAdvanced = false;
     let loggingEnabled = GM_getValue("enabled", false);
 
+    GM_registerMenuCommand(
+        `${enabled ? "✅" : "❌"} Enabled`,
+        () => {
+            GM_setValue("enabled", !enabled);
+            alert("Reload the page to see the updated menu.");
+        }
+    );
 
     function getCurrentVideo() {
         return [...document.querySelectorAll("video")]
